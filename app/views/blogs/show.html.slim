@@ -1,0 +1,12 @@
+h1 = t :show
+
+p 
+  = Blog.human_attribute_name(:title) 
+  |  : 
+  = @blog.title
+p 
+  = Blog.human_attribute_name(:content) 
+  |  : 
+  = @blog.title
+br
+  = link_to "一覧画面に戻る", :blogs

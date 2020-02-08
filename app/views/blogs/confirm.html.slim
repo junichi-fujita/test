@@ -1,0 +1,15 @@
+h3 以下の内容で送信する
+
+= form_with(model: @blog, local: true) do |f|
+  .form-group.my-4
+    = f.hidden_field :title
+    = f.hidden_field :content
+
+    p
+      | タイトル
+      = @blog.title
+    p
+      | 本文
+      = @blog.content
+  = f.submit class: "btn btn-primary mr-3"
+  = f.submit "戻る", name: "back", class: "btn btn-primary"

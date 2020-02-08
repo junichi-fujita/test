@@ -1,0 +1,21 @@
+= form_with model: blog, local: true, url: choose_new_or_edit do |f|
+  -# binding.pry
+  - if blog.errors.any?
+    #error_explanation
+      h2.alert.alert-danger
+        = blog.errors.count
+        | 件のエラーがあります。
+        ul.h5.list-unstyled
+          - blog.errors.full_messages.each do |msg|
+            li = msg
+
+  .form-group.my-4
+    = f.label :title
+    = f.text_field :title
+  .form-group.my-4
+    = f.label :content
+    = f.text_field :content
+
+  = f.submit class: "btn btn-primary"
+
+= link_to "一覧画面に戻る", blogs_path

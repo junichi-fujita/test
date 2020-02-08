@@ -1,0 +1,21 @@
+h1 = t :index
+
+p.alert.alert-success = notice
+
+.mb-4
+table.table.table-hover
+  thead.thead-dark
+    tr
+      th = Blog.human_attribute_name(:title)
+      th = Blog.human_attribute_name(:content)
+      th 
+      th
+      th
+  -  @blogs.each do |blog|
+    tr
+      td = blog.title
+      td = blog.content
+      td = link_to "詳細", blog
+      td = link_to "変更", [:edit, blog]
+      td = link_to "削除", blog, method: :delete, data: { confirm: "本当に削除していいですか？" }
+= link_to "新しくブログを投稿する", :new_blog

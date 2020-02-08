@@ -1,0 +1,13 @@
+ja:
+  new: "新規登録" 
+  index: "一覧表示"
+  show: "詳細表示"
+  edit: "変更画面"
+
+  activerecord:
+    models:
+      blog: ブログ
+    attributes:
+      blog:
+        title: タイトル
+        content: 内容
